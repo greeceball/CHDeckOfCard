@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="A9g-oL-zQU">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Card View Controller-->
+        <scene sceneID="eri-Gb-ERx">
+            <objects>
+                <viewController id="A9g-oL-zQU" customClass="CHCardViewController" customModule="CHDeckOfCards" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fdh-S8-KVd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glO-uD-sAs">
+                                <rect key="frame" x="0.0" y="812" width="414" height="30"/>
+                                <state key="normal" title="Draw"/>
+                                <connections>
+                                    <action selector="drawCardButtonTapped:" destination="A9g-oL-zQU" eventType="touchUpInside" id="5Lu-xQ-bzl"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="adZ-p6-ZJO">
+                                <rect key="frame" x="-0.5" y="115.5" width="415" height="675"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Suit)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYL-ny-x7L">
+                                        <rect key="frame" x="0.0" y="0.0" width="415" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kIN-i9-pfB">
+                                        <rect key="frame" x="0.0" y="30" width="415" height="645"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="kIN-i9-pfB" secondAttribute="height" multiplier="2.25:3.5" id="kyw-lL-Hvq"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.59970326576173583" green="1" blue="0.5689933513130665" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="adZ-p6-ZJO" firstAttribute="width" secondItem="fdh-S8-KVd" secondAttribute="width" constant="0.80000000000000004" id="70s-d1-lno"/>
+                            <constraint firstItem="adZ-p6-ZJO" firstAttribute="centerX" secondItem="uDU-6E-bdU" secondAttribute="centerX" id="8LM-ay-lF9"/>
+                            <constraint firstItem="adZ-p6-ZJO" firstAttribute="height" secondItem="fdh-S8-KVd" secondAttribute="height" multiplier="0.75279" constant="0.69999999999999996" id="Cvl-1I-5Jh"/>
+                            <constraint firstItem="uDU-6E-bdU" firstAttribute="trailing" secondItem="glO-uD-sAs" secondAttribute="trailing" id="J0D-vn-UIr"/>
+                            <constraint firstItem="glO-uD-sAs" firstAttribute="leading" secondItem="uDU-6E-bdU" secondAttribute="leading" id="QWW-GF-lDV"/>
+                            <constraint firstItem="uDU-6E-bdU" firstAttribute="bottom" secondItem="glO-uD-sAs" secondAttribute="bottom" constant="20" id="VcA-Tp-YLK"/>
+                            <constraint firstItem="adZ-p6-ZJO" firstAttribute="centerY" secondItem="uDU-6E-bdU" secondAttribute="centerY" id="xbF-KF-G6k"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uDU-6E-bdU"/>
+                    </view>
+                    <connections>
+                        <outlet property="cardImageView" destination="kIN-i9-pfB" id="tGv-X0-hEl"/>
+                        <outlet property="drawCardButton" destination="glO-uD-sAs" id="TsJ-aF-S6v"/>
+                        <outlet property="suitLabel" destination="FYL-ny-x7L" id="a6K-1b-vDX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0r0-Js-QEp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+</document>
